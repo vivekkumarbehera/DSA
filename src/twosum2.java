@@ -19,7 +19,7 @@ public class twosum2 {
 
          }
          else {
-             start--;
+             start++;
          }
      }
      return new int[]{-1,-1};

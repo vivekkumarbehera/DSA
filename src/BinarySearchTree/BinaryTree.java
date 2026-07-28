@@ -94,6 +94,40 @@ public class BinaryTree {
             }
         }
     }
+public static int CountNode(Node root){
+        if(root == null){
+            return 0;
+        }
+        int left=CountNode(root.left);
+        int right = CountNode(root.right);
+        return left+right-1;
+}
+public static int sumOfNode(Node root){
+        if(root == null){
+            return 0;
+        }
+        int leftsum=sumOfNode(root.left);
+        int rightsum = sumOfNode(root.right);
+        return leftsum+rightsum+ root.value;
+
+    }
+public static int HegihtOffTree(Node root){
+        if(root == null){
+            return 0;
+        }
+        int leftHeight=HegihtOffTree(root.left);
+        int rightHeight=HegihtOffTree(root.right);
+        return Math.max(leftHeight,rightHeight)+1;
+}
+public static int diameter(Node root){
+        if(root ==  null){
+            return 0;
+        }
+        int diam1=diameter(root.left);
+        int diam2=diameter(root.right);
+        int diam3 = HegihtOffTree(root.left)+HegihtOffTree(root.right)+1;
+        return Math.max(diam3,Math.max(diam2,diam1));
+}
 
 
     public static void main(String[] args) {

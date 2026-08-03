@@ -1,7 +1,7 @@
 package BinarySearchTree;
 
 public class BST {
-    public class Node {
+    public  class Node {
         private int value;
         private int height;
         private Node left;
